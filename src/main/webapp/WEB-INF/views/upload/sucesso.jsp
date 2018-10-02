@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="UTF-8"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Cadastrar Produtos</title>
+<meta charset="ISO-8859-1">
+<title>Sucesso</title>
 </head>
 <body>
-	
-	<h1>Cadastrado com sucesso</h1>
-	
+	Sucesso
+	${message}
 </body>
 </html>

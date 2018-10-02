@@ -1,11 +1,38 @@
 package br.com.projetospring.models;
 
-public class Produto {
+import java.util.List;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Produto {
+		
+		@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+		private int id;
+		
 		private String titulo;
 		private String descricao;
 		private int paginas;
 		
+		@ElementCollection
+		private List<Precos> precos;
+		
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public List<Precos> getPrecos() {
+			return precos;
+		}
+		public void setPrecos(List<Precos> precos) {
+			this.precos = precos;
+		}
 		public String getTitulo() {
 			return titulo;
 		}
