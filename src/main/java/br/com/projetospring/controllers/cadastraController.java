@@ -35,7 +35,7 @@ public class cadastraController {
 	}
 	
 	@RequestMapping("/produtos/form")
-	public ModelAndView form() {
+	public ModelAndView form(Produto produto) {
 		ModelAndView model = new ModelAndView("produtos/form");
 		model.addObject("tipos",TipoPreco.values());
 		
@@ -46,7 +46,7 @@ public class cadastraController {
 	public ModelAndView gravar(@Valid Produto produto, BindingResult result, RedirectAttributes redAtributtes) {
 		
 		if(result.hasErrors()) {
-			return form();
+			return form(produto);
 		}
 		
 		produtoDao.gravar(produto);

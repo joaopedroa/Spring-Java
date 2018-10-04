@@ -1,5 +1,6 @@
 package br.com.projetospring.models;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.ElementCollection;
@@ -21,6 +22,14 @@ public class Produto {
 		@ElementCollection
 		private List<Precos> precos;
 		
+		private Calendar dataLancamento;
+		
+		public Calendar getDataLancamento() {
+			return dataLancamento;
+		}
+		public void setDataLancamento(Calendar dataLancamento) {
+			this.dataLancamento = dataLancamento;
+		}
 		public int getId() {
 			return id;
 		}

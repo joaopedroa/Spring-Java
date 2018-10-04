@@ -15,28 +15,35 @@
 		<div>
 			<label>Titulo do Livro</label>
 			
-			<input type="text" name="titulo">
+			<form:input path="produto.titulo" />
 			<form:errors path="produto.titulo" />
 		</div>
 		<div>
 			<label>Descricao</label>
 			
-			<textarea rows="10" cols="20" name="descricao"></textarea>
+			<form:textarea rows="10" cols="20" path="produto.descricao" />
 			<form:errors path="produto.descricao" />
 		</div>
 		<div>
 			<label>Páginas</label>
 			
-			<input type="text" name="paginas">
+			<form:input path="produto.paginas"/>
 			<form:errors path="produto.paginas" />
 		</div>
 		
+		<div>
+			<label>Data Lançamento</label>
+			<form:input path="produto.dataLancamento"/>
+			
+			<form:errors path="produto.dataLancamento" />
+			
+		</div>
 		<c:forEach items = "${tipos}" var="tipoPreco" varStatus="status">
 		
 			<div>
 				<label>${tipoPreco}</label>
-				<input type="text" name="precos[${status.index}].valor">
-				<input type="hidden" name="precos[${status.index}].tipo" value="${tipoPreco}">
+				<form:input path="produto.precos[${status.index}].valor"/>
+				<form:hidden path="produto.precos[${status.index}].tipo" value="${tipoPreco}"/>
 			</div>
 			
 		</c:forEach>
